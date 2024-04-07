@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -49,6 +51,49 @@ class MainScreen extends StatelessWidget {
                 ),
                 IconButton(onPressed: () {}, icon: Icon(Icons.settings))
               ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width / 2,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    Theme.of(context).colorScheme.tertiary,
+                    Theme.of(context).colorScheme.secondary,
+                    Theme.of(context).colorScheme.primary,
+                  ], transform: GradientRotation(pi / 4)),
+                  borderRadius: BorderRadius.circular(25)),
+              child: Column(
+                children: [
+                  Text("Total Balance"),
+                  Text("98000 rs"),
+                  Row(
+                    children: [
+                      Container(
+                        width: 20,
+                        height: 20,
+                        decoration: BoxDecoration(
+                            color: Colors.white30, shape: BoxShape.circle),
+                        child: Center(
+                          child: Icon(
+                            Icons.arrow_downward,
+                            size: 12,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [Text("Available balance"), Text("51654 rs")],
+                      )
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
