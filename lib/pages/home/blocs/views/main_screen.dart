@@ -49,10 +49,10 @@ class MainScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.settings))
+                IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -63,32 +63,52 @@ class MainScreen extends StatelessWidget {
                     Theme.of(context).colorScheme.tertiary,
                     Theme.of(context).colorScheme.secondary,
                     Theme.of(context).colorScheme.primary,
-                  ], transform: GradientRotation(pi / 4)),
+                  ], transform: const GradientRotation(pi / 4)),
                   borderRadius: BorderRadius.circular(25)),
               child: Column(
                 children: [
-                  Text("Total Balance"),
-                  Text("98000 rs"),
+                  const Text("Total Balance",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400)),
+                  const Text("98000 rs",
+                      style: TextStyle(
+                          fontSize: 40,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
                   Row(
                     children: [
                       Container(
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
+                        width: 25,
+                        height: 25,
+                        decoration: const BoxDecoration(
                             color: Colors.white30, shape: BoxShape.circle),
-                        child: Center(
+                        child: const Center(
                           child: Icon(
                             Icons.arrow_downward,
                             size: 12,
+                            color: Colors.greenAccent,
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [Text("Available balance"), Text("51654 rs")],
+                        children: [
+                          Text("Available balance",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600)),
+                          Text("51654 rs",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600))
+                        ],
                       )
                     ],
                   )
