@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:expensetracker/pages/add_expense/blocs/views/add_expense.dart';
 import 'package:expensetracker/pages/home/blocs/views/main_screen.dart';
 import 'package:expensetracker/pages/home/blocs/views/stats/stats.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   late Color selectedItem = Theme.of(context).colorScheme.primary;
   Color unselectedItem = Colors.grey;
-  @override
-  void initState() {
-    super.initState();
-    selectedItem = Theme.of(context).colorScheme.primary;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => const AddExpense()));
+        },
         shape: CircleBorder(),
         child: Container(
             width: 60,
