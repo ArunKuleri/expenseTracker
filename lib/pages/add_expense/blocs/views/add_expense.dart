@@ -57,6 +57,8 @@ class _AddExpenseState extends State<AddExpense> {
               height: 16,
             ),
             TextFormField(
+              readOnly: true,
+              textAlignVertical: TextAlignVertical.center,
               controller: categoryController,
               decoration: InputDecoration(
                   filled: true,
@@ -65,6 +67,76 @@ class _AddExpenseState extends State<AddExpense> {
                     Icons.list,
                     size: 16,
                     color: Colors.grey,
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (ctx) {
+                            return AlertDialog(
+                              title: Text("Create a Categpry"),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextFormField(
+                                    textAlignVertical: TextAlignVertical.center,
+                                    onTap: () {},
+                                    decoration: InputDecoration(
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        prefixIcon: const Icon(
+                                          Icons.date_range,
+                                          size: 16,
+                                          color: Colors.grey,
+                                        ),
+                                        hintText: ("Name"),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                            borderSide: BorderSide.none)),
+                                  ),
+                                  SizedBox(height: 16),
+                                  TextFormField(
+                                    textAlignVertical: TextAlignVertical.center,
+                                    onTap: () {},
+                                    decoration: InputDecoration(
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        prefixIcon: const Icon(
+                                          Icons.date_range,
+                                          size: 16,
+                                          color: Colors.grey,
+                                        ),
+                                        hintText: ("Icon"),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                            borderSide: BorderSide.none)),
+                                  ),
+                                  SizedBox(height: 16),
+                                  TextFormField(
+                                    textAlignVertical: TextAlignVertical.center,
+                                    onTap: () {},
+                                    decoration: InputDecoration(
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        prefixIcon: const Icon(
+                                          Icons.date_range,
+                                          size: 16,
+                                          color: Colors.grey,
+                                        ),
+                                        hintText: ("Color"),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                            borderSide: BorderSide.none)),
+                                  ),
+                                ],
+                              ),
+                            );
+                          });
+                    },
                   ),
                   hintText: ("Category"),
                   border: OutlineInputBorder(
