@@ -41,6 +41,8 @@ dependencies:
 
   expense_repository:
      path: packages/expense_repository
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:

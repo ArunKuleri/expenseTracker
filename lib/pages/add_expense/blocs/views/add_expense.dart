@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:intl/intl.dart';
+import 'package:expense_repository/src/expense_repository.dart';
 
 class AddExpense extends StatefulWidget {
   const AddExpense({super.key});
@@ -300,7 +301,9 @@ class _AddExpenseState extends State<AddExpense> {
                 width: double.infinity,
                 height: kToolbarHeight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Category category = Category.empty;
+                  },
                   child: const Text(
                     "Save",
                     style: TextStyle(fontSize: 22, color: Colors.white),
